@@ -1,5 +1,6 @@
 {% extends 'bootstrap/base.html' %}
 
+
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,9 +16,7 @@
 {{simplemde.js}}
 {% endblock %}
 
-{% block navbar%}
-{% include 'navbar.html' %}
-{% endblock %}
+
 
 {% block scripts %}
 {{super()}}
@@ -26,3 +25,15 @@
 <script src="{{url_for('static',filename='js/jquery.easing.min.js')}}"></script>
 <script src="{{url_for('static',filename='js/script.js')}}"></script>
 {%endblock%}
+
+{% block navbar %}
+   {% include 'navbar.html' %}
+{% endblock %}
+
+
+<!-- <body>
+
+    {% block content %}
+
+    {% endblock %}
+</body> -->

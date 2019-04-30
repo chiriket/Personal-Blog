@@ -1,7 +1,34 @@
-.navbar {
-    background-color: #333;
+.container-fluid,
+.col-md-12 {
+    padding: 0;
+}
+
+
+.subscribe {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.445));
+    padding: 5rem 0;
+    color: white;
+    font-family: 'Tenor Sans'
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
+    background-color: #333;
   }
+  
+  li {
+    float: left;
+  }
+
+body {
+    background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.galleryzooart.com%2Fwp-content%2Fuploads%2Fsites%2F1382%2F2018%2F11%2F44501.jpg&imgrefurl=https%3A%2F%2Fwww.galleryzooart.com%2Fart%2Fflower-painting-blue-artwork-original-art-abstract-floral%2F&docid=YWFFVpaAb8TccM&tbnid=ZhzzBxGXyhRPmM%3A&vet=10ahUKEwjhqITq7ffhAhUwx4UKHbhxAsgQMwigASg_MD8..i&w=864&h=750&bih=675&biw=1299&q=abstract%20blue%20art&ved=0ahUKEwjhqITq7ffhAhUwx4UKHbhxAsgQMwigASg_MD8&iact=mrc&uact=8);
+}   
+    
+    /* https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.etsystatic.com%2F7139752%2Fr%2Fil%2F97ced8%2F689947701%2Fil_570xN.689947701_8rzq.jpg&imgrefurl=https%3A%2F%2Fwww.etsy.com%2Flisting%2F213025011%2Fhuge-painting-abstract-print-blue&docid=NFbulCqIdA-FRM&tbnid=zCw1Pmr0i78ZWM%3A&vet=10ahUKEwjhqITq7ffhAhUwx4UKHbhxAsgQMwhYKAQwBA..i&w=570&h=570&bih=675&biw=1299&q=abstract%20blue%20art&ved=0ahUKEwjhqITq7ffhAhUwx4UKHbhxAsgQMwhYKAQwBA&iact=mrc&uact=8 */
+
+
+
+

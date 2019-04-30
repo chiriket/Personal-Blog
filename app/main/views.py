@@ -6,6 +6,7 @@ from flask_login import login_required,current_user
 from datetime import datetime
 from ..user_emails import send_subscriptions
 import markdown2
+from ..requests import get_quotes
 
 
 # Views
@@ -15,6 +16,11 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
+    myquote = get_quotes()
+    quote = myquote['quote']
+    quote_author = myquote['author']
+    page = request.args.get('page', 1, type=int)
+
     form = EmailForm()
 
     if form.validate_on_submit():
@@ -32,10 +38,15 @@ def index():
 
     if all_blogs:
         blogs = all_blogs
-        return render_template('index.html', title=title, all_blogs=blogs, subscribe_form = form)
+        return render_template('index.html', title=title, all_blogs=blogs, subscribe_form = form,quote = quote,quote_author = quote_author)
     elif not all_blogs:
         blog_message = 'Whoooops, we have no blogs here'
-        return render_template('index.html', title=title, blog_message = blog_message, subscribe_form = form)
+    
+    
+    return render_template('index.html', title=title, blog_message = blog_message, subscribe_form = form,quote = quote,quote_author = quote_author)
+
+
+    
 
 @main.route('/blog/<int:id>', methods=['GET','POST'])
 def blog(id):
@@ -81,6 +92,19 @@ def create_blog():
         return redirect(url_for('main.blog',id=new_blog.id))
 
     return render_template('create_blog.html', title = 'Create Blog', blog_form = blog_form)
+
+
+@main.route('/abstract', methods=['GET','POST'])
+@login_required
+def abstract(category = "Abstract"):
+
+    abstract = Blog.query.filter_by(category = "Abstract")
+    
+    title = "Abstract Blogs"
+    return render_template('abstract.html', abstract= abstract, title=title, blog ='Create Blog')
+
+
+
 
 
 @main.route('/user/<uname>')
